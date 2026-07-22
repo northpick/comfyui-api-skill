@@ -1,0 +1,225 @@
+{
+  "qwen": {
+    "file": "Qwen文本生图.json",
+    "display": "Qwen 真实感",
+    "description": "真实感最强，细节丰富，中文理解好。5-8min",
+    "inputs": [
+      { "nodeId": "9", "fieldName": "text", "label": "正面描述", "type": "string" },
+      { "nodeId": "29", "fieldName": "text", "label": "负面描述", "type": "string" }
+    ],
+    "output_node": "28"
+  },
+  "flux": {
+    "file": "FLUX 2 Klein 9B.json",
+    "display": "FLUX 9B",
+    "description": "速度快，质量不错。3-5min",
+    "inputs": [
+      { "nodeId": "693:135", "fieldName": "text", "label": "正面描述", "type": "string" },
+      { "nodeId": "96", "fieldName": "text", "label": "负面描述", "type": "string" },
+      { "nodeId": "693:129", "fieldName": "width", "label": "宽度", "type": "int", "default": 0 },
+      { "nodeId": "693:129", "fieldName": "height", "label": "高度", "type": "int", "default": 0 }
+    ],
+    "output_node": "95"
+  },
+  "qwen_single": {
+    "file": "qwen单图参考.json",
+    "display": "Qwen单图参考",
+    "description": "1张参考图，Qwen Image Edit。正面+负面提示词。4-6min",
+    "inputs": [
+      { "nodeId": "111", "fieldName": "prompt", "label": "正面描述", "type": "string" },
+      { "nodeId": "138", "fieldName": "prompt", "label": "负面描述", "type": "string" },
+      { "nodeId": "112", "fieldName": "width", "label": "宽度", "type": "int", "default": 1024 },
+      { "nodeId": "112", "fieldName": "height", "label": "高度", "type": "int", "default": 1024 },
+      { "nodeId": "129", "fieldName": "image", "label": "参考图", "type": "image" }
+    ],
+    "output_node": "137"
+  },
+  "qwen_dual": {
+    "file": "qwen双图参考.json",
+    "display": "Qwen双图参考",
+    "description": "2张参考图，Qwen Image Edit。正面+负面提示词。4-6min",
+    "inputs": [
+      { "nodeId": "111", "fieldName": "prompt", "label": "正面描述", "type": "string" },
+      { "nodeId": "138", "fieldName": "prompt", "label": "负面描述", "type": "string" },
+      { "nodeId": "112", "fieldName": "width", "label": "宽度", "type": "int", "default": 1024 },
+      { "nodeId": "112", "fieldName": "height", "label": "高度", "type": "int", "default": 1024 },
+      { "nodeId": "129", "fieldName": "image", "label": "参考图1", "type": "image" },
+      { "nodeId": "130", "fieldName": "image", "label": "参考图2", "type": "image" }
+    ],
+    "output_node": "137"
+  },
+  "qwen_triple": {
+    "file": "qwen三图参考.json",
+    "display": "Qwen三图参考",
+    "description": "3张参考图，Qwen Image Edit。正面+负面提示词。4-6min",
+    "inputs": [
+      { "nodeId": "111", "fieldName": "prompt", "label": "正面描述", "type": "string" },
+      { "nodeId": "138", "fieldName": "prompt", "label": "负面描述", "type": "string" },
+      { "nodeId": "112", "fieldName": "width", "label": "宽度", "type": "int", "default": 1024 },
+      { "nodeId": "112", "fieldName": "height", "label": "高度", "type": "int", "default": 1024 },
+      { "nodeId": "129", "fieldName": "image", "label": "参考图1", "type": "image" },
+      { "nodeId": "130", "fieldName": "image", "label": "参考图2", "type": "image" },
+      { "nodeId": "135", "fieldName": "image", "label": "参考图3", "type": "image" }
+    ],
+    "output_node": "137"
+  },
+  "storyboard": {
+    "file": "分镜 api.json",
+    "display": "分镜",
+    "description": "双场景分镜，正面+负面提示词。5-8min",
+    "inputs": [
+      { "nodeId": "110", "fieldName": "prompt", "label": "负面描述", "type": "string" },
+      { "nodeId": "111", "fieldName": "prompt", "label": "正面描述", "type": "string" },
+      { "nodeId": "112", "fieldName": "width", "label": "宽度", "type": "int", "default": 0 },
+      { "nodeId": "112", "fieldName": "height", "label": "高度", "type": "int", "default": 0 },
+      { "nodeId": "129", "fieldName": "image", "label": "参考图1", "type": "image", "optional": true },
+      { "nodeId": "130", "fieldName": "image", "label": "参考图2", "type": "image", "optional": true }
+    ],
+    "output_node": "136"
+  },
+  "z_image": {
+    "file": "z-image.json",
+    "display": "Z-Image（无LoRA）",
+    "description": "通用真实感，无Lora纯模型。2-4min",
+    "inputs": [
+      { "nodeId": "11", "fieldName": "text", "label": "正面描述", "type": "string" },
+      { "nodeId": "17", "fieldName": "text", "label": "负面描述", "type": "string" },
+      { "nodeId": "13", "fieldName": "width", "label": "宽度", "type": "int", "default": 0 },
+      { "nodeId": "13", "fieldName": "height", "label": "高度", "type": "int", "default": 0 }
+    ],
+    "output_node": "16"
+  },
+  "ltx23_i2v": {
+    "file": "LTX2.3首尾帧.json",
+    "display": "LTX 2.3 首尾帧视频",
+    "description": "LTX 2.3 图生视频，首尾帧 + 详细动作描述。支持帧率/时长控制。",
+    "inputs": [
+      { "nodeId": "468:364", "fieldName": "text", "label": "正面描述（详细动作场景）", "type": "string" },
+      { "nodeId": "468:374", "fieldName": "text", "label": "负面描述", "type": "string" },
+      { "nodeId": "468:362", "fieldName": "value", "label": "帧率(fps)", "type": "int", "default": 24 },
+      { "nodeId": "468:363", "fieldName": "value", "label": "时长(秒)", "type": "int", "default": 5 },
+      { "nodeId": "457", "fieldName": "image", "label": "首帧参考图", "type": "image" },
+      { "nodeId": "458", "fieldName": "image", "label": "尾帧参考图", "type": "image" }
+    ],
+    "output_node": "75"
+  },
+  "ideogram4": {
+    "file": "Ideogram4.json",
+    "display": "Ideogram 4",
+    "description": "Ideogram 4 高质量图像生成，支持结构化JSON caption。需传入JSON格式提示词。8步极速出图。",
+    "inputs": [
+      { "nodeId": "10", "fieldName": "value", "label": "结构化JSON描述(caption)", "type": "string" },
+      { "nodeId": "696", "fieldName": "value", "label": "宽度", "type": "int", "default": 1944 },
+      { "nodeId": "697", "fieldName": "value", "label": "高度", "type": "int", "default": 1456 }
+    ],
+    "output_node": "63"
+  },
+  "rmbg_nocrop": {
+    "file": "抠图不裁剪.json",
+    "display": "抠图不裁剪",
+    "description": "移除背景，保持原图尺寸。RMBG-2.0模型。",
+    "inputs": [
+      { "nodeId": "6", "fieldName": "image", "label": "输入图", "type": "image" }
+    ],
+    "output_node": "5"
+  },
+  "rmbg_crop": {
+    "file": "抠图裁剪.json",
+    "display": "抠图裁剪",
+    "description": "移除背景并按内容自动裁剪透明边缘。RMBG-2.0+CropByMask。",
+    "inputs": [
+      { "nodeId": "6", "fieldName": "image", "label": "输入图", "type": "image" }
+    ],
+    "output_node": "5"
+  },
+  "music": {
+    "file": "ACE-Step-音乐新版.json",
+    "display": "ACE-Step 音乐生成",
+    "description": "AI音乐生成，支持caption+歌词+元数据。UNET: acestep_v1.5_xl_turbo_bf16。1-3min",
+    "inputs": [
+      { "nodeId": "94", "fieldName": "tags", "label": "音乐描述(caption)", "type": "string" },
+      { "nodeId": "94", "fieldName": "lyrics", "label": "歌词（空字串=纯音乐）", "type": "string" },
+      { "nodeId": "94", "fieldName": "bpm", "label": "BPM", "type": "int", "default": 95 },
+      { "nodeId": "94", "fieldName": "keyscale", "label": "调性", "type": "string", "default": "C major" },
+      { "nodeId": "111", "fieldName": "value", "label": "时长(秒)", "type": "int", "default": 30 }
+    ],
+    "output_node": "107"
+  },
+  "video_to_frames": {
+    "file": "视频转序列帧不去背景.json",
+    "display": "视频转序列帧",
+    "description": "将视频拆分为PNG序列帧。",
+    "inputs": [
+      { "nodeId": "48", "fieldName": "file", "label": "视频文件名", "type": "string" }
+    ],
+    "output_node": "50"
+  },
+  "video_to_frames_rmbg": {
+    "file": "视频转序列帧去背景.json",
+    "display": "视频转序列帧(去背景)",
+    "description": "将视频拆分为PNG序列帧并移除背景。",
+    "inputs": [
+      { "nodeId": "48", "fieldName": "file", "label": "视频文件名", "type": "string" }
+    ],
+    "output_node": "50"
+  },
+  "video_to_frames_rmbg_clean": {
+    "file": "视频转序列帧去背景优化版干净.json",
+    "display": "视频转序列帧去背景(优化版-干净)",
+    "description": "优化版视频转序列帧+RMBG-2.0去背景。节点52:帧率/帧数上限, 节点53:最大尺寸。",
+    "inputs": [
+      { "nodeId": "52", "fieldName": "video", "label": "视频文件名", "type": "string" },
+      { "nodeId": "52", "fieldName": "force_rate", "label": "帧率(fps)", "type": "int", "default": 0 },
+      { "nodeId": "52", "fieldName": "frame_load_cap", "label": "帧数上限", "type": "int", "default": 0 },
+      { "nodeId": "53", "fieldName": "largest_size", "label": "最大尺寸(px)", "type": "int", "default": 512 }
+    ],
+    "output_node": "50"
+  },
+  "video_to_frames_rmbg_normal": {
+    "file": "视频转序列帧去背景优化版一般.json",
+    "display": "视频转序列帧去背景(优化版-一般)",
+    "description": "优化版视频转序列帧+RMBG-1.4去背景(保留烟雾)。节点52:帧率/帧数上限, 节点53:最大尺寸。",
+    "inputs": [
+      { "nodeId": "52", "fieldName": "video", "label": "视频文件名", "type": "string" },
+      { "nodeId": "52", "fieldName": "force_rate", "label": "帧率(fps)", "type": "int", "default": 0 },
+      { "nodeId": "52", "fieldName": "frame_load_cap", "label": "帧数上限", "type": "int", "default": 0 },
+      { "nodeId": "53", "fieldName": "largest_size", "label": "最大尺寸(px)", "type": "int", "default": 512 }
+    ],
+    "output_node": "50"
+  },
+  "stable_audio_3": {
+    "file": "Stable Audio 3.json",
+    "display": "Stable Audio 3 音频生成",
+    "description": "Stable Audio 3 文生音频/音效/音乐。提示词模板见 templates/stable_audio_3.md。需stable_audio_3_medium模型。1-3min",
+    "inputs": [
+      { "nodeId": "62", "fieldName": "text", "label": "正面描述（详细描述想要的声音）", "type": "string" },
+      { "nodeId": "57", "fieldName": "text", "label": "负面描述（不想要的音质特征，可选）", "type": "string" },
+      { "nodeId": "74", "fieldName": "value", "label": "时长(秒)", "type": "int", "default": 30 }
+    ],
+    "output_node": "19"
+  },
+  "ltx_director": {
+    "file": "LTX2.3导演台.json",
+    "display": "LTX 2.3 导演台",
+    "description": "LTXDirector时间线视频：6段×2.5s=15s完整短剧。使用run_director.py修改节点131的timeline_data。",
+    "inputs": [
+      { "nodeId": "131", "fieldName": "timeline_data", "label": "时间线JSON数据", "type": "string" },
+      { "nodeId": "131", "fieldName": "local_prompts", "label": "分段prompt(竖线分隔)", "type": "string" },
+      { "nodeId": "131", "fieldName": "segment_lengths", "label": "各段帧数(逗号分隔)", "type": "string" }
+    ],
+    "output_node": "37"
+  },
+  "bernini": {
+    "file": "bernini资产生成.json",
+    "display": "Bernini 图生视频",
+    "description": "Bernini-R Wan2.2 图生视频，960×1280 25帧 16fps~1.5s。参考图+动作描述。最慢但最全能。",
+    "inputs": [
+      { "nodeId": "182", "fieldName": "image", "label": "参考图(角色展板)", "type": "image" },
+      { "nodeId": "152", "fieldName": "value", "label": "动画描述词", "type": "string" },
+      { "nodeId": "155", "fieldName": "filename_prefix", "label": "输出前缀", "type": "string", "default": "video/bernini" },
+      { "nodeId": "134", "fieldName": "width", "label": "宽度", "type": "int", "default": 960 },
+      { "nodeId": "134", "fieldName": "height", "label": "高度", "type": "int", "default": 1280 }
+    ],
+    "output_node": "155"
+  }
+}

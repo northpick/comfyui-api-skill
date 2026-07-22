@@ -1,0 +1,393 @@
+{
+  "122": {
+    "inputs": {
+      "vae_name": "Wan2_1_VAE_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE加载器"
+    }
+  },
+  "123": {
+    "inputs": {
+      "lora_name": "Bernini-R\\Bernini-R_LightX2V_low_noise.safetensors",
+      "strength_model": 1,
+      "model": [
+        "129",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器(仅模型)"
+    }
+  },
+  "127": {
+    "inputs": {
+      "unet_name": "wan2.2_bernini_r_high_noise_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNET加载器"
+    }
+  },
+  "128": {
+    "inputs": {
+      "lora_name": "Bernini-R\\Bernini-R_LightX2V_high_noise.safetensors",
+      "strength_model": 1,
+      "model": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器(仅模型)"
+    }
+  },
+  "129": {
+    "inputs": {
+      "unet_name": "wan2.2_bernini_r_low_noise_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNET加载器"
+    }
+  },
+  "134": {
+    "inputs": {
+      "width": 960,
+      "height": 1280,
+      "length": 25,
+      "batch_size": 1,
+      "ref_max_size": 1536,
+      "positive": [
+        "135",
+        0
+      ],
+      "negative": [
+        "170",
+        0
+      ],
+      "vae": [
+        "122",
+        0
+      ],
+      "reference_images.reference_image_0": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "BerniniConditioning",
+    "_meta": {
+      "title": "Bernini Conditioning"
+    }
+  },
+  "135": {
+    "inputs": {
+      "text": [
+        "139",
+        0
+      ],
+      "clip": [
+        "159",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  },
+  "137": {
+    "inputs": {
+      "choice": "image-to-video",
+      "index": 5,
+      "option1": "Default",
+      "option2": "Text to Image",
+      "option3": "Text to Video",
+      "option4": "Image Editing",
+      "option5": "Subject to Image",
+      "option6": "image-to-video",
+      "option7": "首尾帧",
+      "option8": "首尾帧+中间帧",
+      "option9": ""
+    },
+    "class_type": "CustomCombo",
+    "_meta": {
+      "title": "自定义组合"
+    }
+  },
+  "139": {
+    "inputs": {
+      "string_a": [
+        "138:2",
+        0
+      ],
+      "string_b": [
+        "152",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "字符串连锁"
+    }
+  },
+  "152": {
+    "inputs": {
+      "value": "正面描述"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "提示词"
+    }
+  },
+  "154": {
+    "inputs": {
+      "fps": 16,
+      "bit_depth": 8,
+      "images": [
+        "186",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "创建视频"
+    }
+  },
+  "155": {
+    "inputs": {
+      "filename_prefix": "video/bernini",
+      "format": "auto",
+      "codec": "auto",
+      "video-preview": "",
+      "video": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "保存视频"
+    }
+  },
+  "156": {
+    "inputs": {
+      "source": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "157": {
+    "inputs": {
+      "sage_attention": "auto",
+      "allow_compile": false,
+      "model": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "PathchSageAttentionKJ",
+    "_meta": {
+      "title": "Patch Sage Attention KJ"
+    }
+  },
+  "158": {
+    "inputs": {
+      "sage_attention": "auto",
+      "allow_compile": false,
+      "model": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "PathchSageAttentionKJ",
+    "_meta": {
+      "title": "Patch Sage Attention KJ"
+    }
+  },
+  "159": {
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "wan",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "CLIP加载器"
+    }
+  },
+  "170": {
+    "inputs": {
+      "conditioning": [
+        "135",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  },
+  "172": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": 666,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "start_at_step": 0,
+      "end_at_step": 2,
+      "return_with_leftover_noise": "enable",
+      "model": [
+        "157",
+        0
+      ],
+      "positive": [
+        "134",
+        0
+      ],
+      "negative": [
+        "134",
+        1
+      ],
+      "latent_image": [
+        "134",
+        2
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "K采样器(高级)"
+    }
+  },
+  "173": {
+    "inputs": {
+      "add_noise": "disable",
+      "noise_seed": 0,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "start_at_step": 2,
+      "end_at_step": 4,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "158",
+        0
+      ],
+      "positive": [
+        "134",
+        0
+      ],
+      "negative": [
+        "134",
+        1
+      ],
+      "latent_image": [
+        "172",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "K采样器(高级)"
+    }
+  },
+  "182": {
+    "inputs": {
+      "image": "subai_normal_v10.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "186": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 4096,
+      "temporal_overlap": 4,
+      "samples": [
+        "173",
+        0
+      ],
+      "vae": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE分块解码"
+    }
+  },
+  "138:56": {
+    "inputs": {
+      "value": [
+        "137",
+        1
+      ]
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (line index)"
+    }
+  },
+  "138:1": {
+    "inputs": {
+      "source": [
+        "138:56",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "138:8": {
+    "inputs": {
+      "string": "^(?:[^\\n]*\\n){index}([^\\n]*)(?:\\n|$)",
+      "find": "index",
+      "replace": [
+        "138:1",
+        0
+      ]
+    },
+    "class_type": "StringReplace",
+    "_meta": {
+      "title": "替换"
+    }
+  },
+  "138:2": {
+    "inputs": {
+      "string": "You are a helpful assistant.\nYou are a helpful assistant specialized in text-to-image generation.\nYou are a helpful assistant specialized in text-to-video generation.\nYou are a helpful assistant specialized in image editing.\nYou are a helpful assistant specialized in subject-to-image generation.\nYou are a helpful assistant specialized in image-to-video generation.\nYou are a helpful assistant specialized in image-to-video generation.Generate a video based on the first and last frames.\nYou are a helpful assistant specialized in image-to-video generation..Generate a video based on the first, middle, and last frames.",
+      "regex_pattern": [
+        "138:8",
+        0
+      ],
+      "mode": "First Group",
+      "case_insensitive": false,
+      "multiline": false,
+      "dotall": false,
+      "group_index": 1
+    },
+    "class_type": "RegexExtract",
+    "_meta": {
+      "title": "正则表达式提取"
+    }
+  }
+}

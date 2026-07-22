@@ -1,0 +1,131 @@
+{
+  "19": {
+    "inputs": {
+      "filename_prefix": "audio/stable_audio_3",
+      "quality": "V0",
+      "audioUI": "/api/view?filename=stable_audio_3_00007.mp3&type=output&subfolder=audio&rand=0.4432456081219148",
+      "audio": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "保存音频 (MP3)"
+    }
+  },
+  "57": {
+    "inputs": {
+      "text": "Negative prompt",
+      "clip": [
+        "76",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  },
+  "58": {
+    "inputs": {
+      "samples": [
+        "60",
+        0
+      ],
+      "vae": [
+        "75",
+        2
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE解码_Audio"
+    }
+  },
+  "59": {
+    "inputs": {
+      "seconds": [
+        "74",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentAudio",
+    "_meta": {
+      "title": "空Latent_Audio"
+    }
+  },
+  "60": {
+    "inputs": {
+      "seed": 609337480542806,
+      "steps": 8,
+      "cfg": 1,
+      "sampler_name": "lcm",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "75",
+        0
+      ],
+      "positive": [
+        "62",
+        0
+      ],
+      "negative": [
+        "57",
+        0
+      ],
+      "latent_image": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "62": {
+    "inputs": {
+      "text": "Positive description",
+      "clip": [
+        "76",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  },
+  "74": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Float (Duration)"
+    }
+  },
+  "75": {
+    "inputs": {
+      "ckpt_name": "stable_audio_3_medium.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器(简易)"
+    }
+  },
+  "76": {
+    "inputs": {
+      "clip_name": "t5gemma_b_b_ul2.safetensors",
+      "type": "stable_audio",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "CLIP加载器"
+    }
+  }
+}

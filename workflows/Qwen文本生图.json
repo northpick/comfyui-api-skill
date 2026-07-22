@@ -1,0 +1,172 @@
+{
+  "1": {
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE加载器"
+    }
+  },
+  "2": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "vae": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "7": {
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "CLIP加载器"
+    }
+  },
+  "8": {
+    "inputs": {
+      "shift": 3,
+      "model": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "模型采样算法AuraFlow"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": "正面描述",
+      "clip": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  },
+  "12": {
+    "inputs": {
+      "seed": 63423065,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "8",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "29",
+        0
+      ],
+      "latent_image": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "13": {
+    "inputs": {
+      "model_name": "nunchaku_qwen_image_2512_best_quality_int4.safetensors",
+      "cpu_offload": "auto",
+      "num_blocks_on_gpu": 15,
+      "use_pin_memory": "disable"
+    },
+    "class_type": "NunchakuQwenImageDiTLoader",
+    "_meta": {
+      "title": "Nunchaku Qwen-Image DiT Loader"
+    }
+  },
+  "24": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "空Latent_SD3"
+    }
+  },
+  "26": {
+    "inputs": {
+      "lora_name": "qwen_image_2512\\Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors",
+      "lora_strength": 1,
+      "cpu_offload": "disable",
+      "model": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "NunchakuQwenImageLoraLoader",
+    "_meta": {
+      "title": "Nunchaku Qwen Image LoRA Loader"
+    }
+  },
+  "28": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
+      "filename_prefix": "ComfyUI",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "图像保存"
+    }
+  },
+  "29": {
+    "inputs": {
+      "text": "负面提示词",
+      "clip": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  }
+}

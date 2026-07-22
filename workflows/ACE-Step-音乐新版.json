@@ -1,0 +1,185 @@
+{
+  "3": {
+    "inputs": {
+      "seed": [
+        "109",
+        0
+      ],
+      "steps": 8,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "78",
+        0
+      ],
+      "positive": [
+        "94",
+        0
+      ],
+      "negative": [
+        "47",
+        0
+      ],
+      "latent_image": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "18": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "106",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE解码_Audio"
+    }
+  },
+  "47": {
+    "inputs": {
+      "conditioning": [
+        "94",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  },
+  "78": {
+    "inputs": {
+      "shift": 3,
+      "model": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "模型采样算法AuraFlow"
+    }
+  },
+  "94": {
+    "inputs": {
+      "tags": "演唱：成熟女声\n曲风定位：古风武侠 / 江湖抒情\n曲风：大气悲壮 + 温柔婉转，侠气与柔情交织\n节奏：中速偏缓，4/4 拍，起承转合分明，副歌深情有力\n乐器：古筝、竹笛、二胡、琵琶、弦乐铺底、轻微鼓点、古风打击乐（木鱼、铜铃），间奏加入箫声",
+      "lyrics": "[第一节]\n一剑霜寒照九州\n半生风雨踏清秋\n马蹄踏碎红尘路\n恩怨未休\n情字难收\n[第二节]\n青山隐隐水悠悠\n红袖添香为谁留\n江湖纵有千般险\n一念温柔\n便胜所有\n[副歌]\n刀光剑影\n藏不住眼底温柔\n策马天涯\n忘不了你回眸\n[结尾]\n一剑 一酒 一知己\n一生 一世 一双人",
+      "seed": [
+        "109",
+        0
+      ],
+      "bpm": 95,
+      "duration": [
+        "111",
+        0
+      ],
+      "timesignature": "4",
+      "language": "zh",
+      "keyscale": "E minor",
+      "generate_audio_codes": true,
+      "cfg_scale": 2,
+      "temperature": 0.85,
+      "top_p": 0.9,
+      "top_k": 0,
+      "min_p": 0,
+      "clip": [
+        "105",
+        0
+      ]
+    },
+    "class_type": "TextEncodeAceStepAudio1.5",
+    "_meta": {
+      "title": "TextEncodeAceStepAudio1.5"
+    }
+  },
+  "98": {
+    "inputs": {
+      "seconds": [
+        "111",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyAceStep1.5LatentAudio",
+    "_meta": {
+      "title": "Empty Ace Step 1.5 Latent Audio"
+    }
+  },
+  "104": {
+    "inputs": {
+      "unet_name": "acestep_v1.5_xl_turbo_bf16.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNET加载器"
+    }
+  },
+  "105": {
+    "inputs": {
+      "clip_name1": "qwen_0.6b_ace15.safetensors",
+      "clip_name2": "qwen_4b_ace15.safetensors",
+      "type": "ace",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "双CLIP加载器"
+    }
+  },
+  "106": {
+    "inputs": {
+      "vae_name": "ace_1.5_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE加载器"
+    }
+  },
+  "107": {
+    "inputs": {
+      "filename_prefix": "audio/ACE_Step1.5_xl_turbo",
+      "quality": "V0",
+      "audioUI": "",
+      "audio": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "保存音频 (MP3)"
+    }
+  },
+  "109": {
+    "inputs": {
+      "value": -629061601594370
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int (Seed)"
+    }
+  },
+  "111": {
+    "inputs": {
+      "value": 120
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "浮点数"
+    }
+  }
+}

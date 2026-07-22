@@ -1,0 +1,42 @@
+{
+  "1": {
+    "inputs": {
+      "rem_mode": "RMBG-2.0",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "torchscript_jit": false,
+      "add_background": "none",
+      "refine_foreground": false,
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "easy imageRemBg",
+    "_meta": {
+      "title": "图像背景移除"
+    }
+  },
+  "5": {
+    "inputs": {
+      "filename_prefix": "QwenEditChar",
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "6": {
+    "inputs": {
+      "image": "Flux2_Klein_9b_kv_00016_.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "1": {
+    "inputs": {
+      "rem_mode": "RMBG-2.0",
+      "image_output": "Preview",
+      "save_prefix": "RMBG_Output",
+      "torchscript_jit": false,
+      "add_background": "none",
+      "refine_foreground": false,
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "easy imageRemBg",
+    "_meta": {
+      "title": "图像背景移除"
+    }
+  },
+  "2": {
+    "inputs": {
+      "invert_mask": false,
+      "detect": "mask_area",
+      "top_reserve": 20,
+      "bottom_reserve": 20,
+      "left_reserve": 20,
+      "right_reserve": 20,
+      "round_to_multiple": "8",
+      "image": [
+        "1",
+        0
+      ],
+      "mask": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "LayerUtility: CropByMask V2",
+    "_meta": {
+      "title": "遮罩裁剪_V2"
+    }
+  },
+  "5": {
+    "inputs": {
+      "filename_prefix": "QwenEditChar",
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "6": {
+    "inputs": {
+      "image": "Flux2_Klein_9b_kv_00016_.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  }
+}

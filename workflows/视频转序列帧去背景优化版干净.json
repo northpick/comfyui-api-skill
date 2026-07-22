@@ -1,0 +1,77 @@
+{
+  "35": {
+    "inputs": {
+      "rem_mode": "RMBG-2.0",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "torchscript_jit": false,
+      "add_background": "none",
+      "refine_foreground": false,
+      "images": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "easy imageRemBg",
+    "_meta": {
+      "title": "图像背景移除"
+    }
+  },
+  "50": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
+      "filename_prefix": "ComfyUI",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "图像保存"
+    }
+  },
+  "52": {
+    "inputs": {
+      "video": "",
+      "force_rate": 12,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 30,
+      "skip_first_frames": 0,
+      "select_every_nth": 2,
+      "format": "AnimateDiff"
+    },
+    "class_type": "VHS_LoadVideoPath",
+    "_meta": {
+      "title": "加载视频（路径）"
+    }
+  },
+  "53": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "largest_size": 512,
+      "image": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToMaxDimension",
+    "_meta": {
+      "title": "图像缩放到最大尺寸"
+    }
+  }
+}

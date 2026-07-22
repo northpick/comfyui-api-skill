@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "settings": {
+    "start_second": 0,
+    "end_second": 15,
+    "duration_seconds": 15,
+    "start_frame": 0,
+    "end_frame": 360,
+    "duration_frames": 360,
+    "epsilon": 0.001,
+    "use_custom_audio": true,
+    "use_custom_motion": true,
+    "inpaint_audio": true,
+    "frame_rate": 24,
+    "display_mode": "seconds",
+    "custom_width": 1280,
+    "custom_height": 720,
+    "resize_method": "maintain aspect ratio",
+    "divisible_by": 32,
+    "img_compression": 18,
+    "override_audio": false
+  },
+  "global_prompt": "整体氛围营造出神秘而温暖的奇幻世界初印象，暖色调灯火与冷色调夜空形成对比，主色为暖橙、深蓝和橙黄，灯光来自灯塔和心灯发出的暖橙色光芒，背景是深蓝色星空，天气晴朗夜晚伴有微风。动画提示为动漫风格奇幻灯塔城夜景，高耸灯塔环绕，暖橙色光球漂浮在每个人胸前，棕色长发低马尾少女走在鹅卵石街道上，琥珀色眼睛映照无数灯光，她进入装满玻璃罐的灯塔工坊，罐中盛放着闪烁的灯火火焰，她小心翼翼捧着一盏暗淡的几近熄灭的心灯，表情温柔专注，金色暖光与深蓝夜空形成对比，吉卜力风格，细节丰富的背景，无字幕，电影运镜。背景音乐为轻柔钢琴旋律配合悠远弦乐，营造神秘而温暖的奇幻氛围，情绪带有奇幻感、温暖、神秘和柔和钢琴。",
+  "retake_global_prompt": "",
+  "timeline": {
+    "mainTrackEnabled": true,
+    "audioTrackEnabled": true,
+    "motionTrackEnabled": true,
+    "showFilenames": true,
+    "overrideAudio": false,
+    "inpaint_audio": true,
+    "propHeight": 90,
+    "globalPropHeight": 60,
+    "global_prompt": "整体氛围营造出神秘而温暖的奇幻世界初印象，暖色调灯火与冷色调夜空形成对比，主色为暖橙、深蓝和橙黄，灯光来自灯塔和心灯发出的暖橙色光芒，背景是深蓝色星空，天气晴朗夜晚伴有微风。动画提示为动漫风格奇幻灯塔城夜景，高耸灯塔环绕，暖橙色光球漂浮在每个人胸前，棕色长发低马尾少女走在鹅卵石街道上，琥珀色眼睛映照无数灯光，她进入装满玻璃罐的灯塔工坊，罐中盛放着闪烁的灯火火焰，她小心翼翼捧着一盏暗淡的几近熄灭的心灯，表情温柔专注，金色暖光与深蓝夜空形成对比，吉卜力风格，细节丰富的背景，无字幕，电影运镜。背景音乐为轻柔钢琴旋律配合悠远弦乐，营造神秘而温暖的奇幻氛围，情绪带有奇幻感、温暖、神秘和柔和钢琴。",
+    "retake_global_prompt": "",
+    "retakeMode": false,
+    "retakeStart": 24,
+    "retakeLength": 48,
+    "retakePrompt": "",
+    "retakeStrength": 1,
+    "retakeVideo": null,
+    "normalStartFrame": 0,
+    "normalDurationFrames": 360,
+    "segments": [
+      {
+        "id": "1784296134263zmzll",
+        "start": 0,
+        "length": 60,
+        "prompt": "画面为灯塔城全景俯瞰，夜空下数十座灯塔矗立在错落有致的城镇中，每座灯塔顶部散发温暖橙色光芒，街道上行人心灯闪烁如地上的星河。镜头为远景缓慢下推，角度由俯视渐变为平视，没有特定角色，无对话，氛围壮美温暖，灯火如星宁静祥和，音效包括远处灯火轻微的嗡鸣声和夜风声。图像提示为动漫广角镜头，奇幻城市夜景，数十座高耸灯塔发出暖橙色光芒，下方鹅卵石街道上有微小人物，每个人胸前都有漂浮的光球，深蓝色星空，吉卜力风格，暖色调，电影构图。",
+        "type": "image",
+        "imageFile": "whatdreamscost/ComfyUI_0001 (2).png",
+        "imageB64": "/api/view?filename=ComfyUI_0001%20(2).png&type=input&subfolder=whatdreamscost",
+        "isEndFrame": false
+      },
+      {
+        "id": "1784296133857h0c6f",
+        "start": 60,
+        "length": 60,
+        "prompt": "镜头推近到一座最高的灯塔，灯塔中层窗户透出温暖光芒，窗内可见少女剪影在工作台前忙碌。镜头为中景推镜，角度微仰视，角色为苏念在窗内工作台前弯腰操作，表情专注，位置居中，无对话，氛围从宏大场景过渡到个人空间，音效为灯火轻柔的噼啪声。图像提示为动漫中景，夜晚高耸灯塔，中层窗户散发温暖光芒，窗内可见女孩剪影在桌前工作，深蓝色天空背景，温暖橙色窗光，大气透视效果。",
+        "type": "image",
+        "imageFile": "whatdreamscost/ComfyUI_0002 (1).png",
+        "imageB64": "/api/view?filename=ComfyUI_0002%20(1).png&type=input&subfolder=whatdreamscost",
+        "isEndFrame": false
+      },
+      {
+        "id": "1784296133902zeehh",
+        "start": 120,
+        "length": 60,
+        "prompt": "画面转到工坊内部，苏念坐在工作台前，周围是装满各色灯火碎片的玻璃瓶，她的心灯在胸口上方散发温暖橙色光，她手中捧着一盏几乎熄灭的心灯，灯火微弱闪烁。镜头为近景固定平视，苏念双手小心翼翼捧着暗淡心灯，表情温柔专注，位置居中，对话为苏念轻声说每盏灯火都是一段活着的记忆，语气温柔敬畏，氛围温暖略带神秘，玻璃瓶中的灯火碎片投射出彩色光斑，音效为心灯微弱的脉动声。图像提示为动漫近景，棕色头发低马尾少女坐在木质工作台前，温暖橙色光球漂浮在胸前，双手捧着暗淡闪烁的小火焰，身后架子上有装着彩色火焰碎片的玻璃罐，温暖工坊内部，琥珀色眼睛，温柔专注表情，细致光线。",
+        "type": "image",
+        "imageFile": "whatdreamscost/ComfyUI_0003 (1).png",
+        "imageB64": "/api/view?filename=ComfyUI_0003%20(1).png&type=input&subfolder=whatdreamscost",
+        "isEndFrame": false
+      },
+      {
+        "id": "1784296133969oi26h",
+        "start": 180,
+        "length": 60,
+        "prompt": "苏念闭上双眼，手指轻触暗淡心灯，灯火碎片从指尖流出如细小火星注入灯中，她的表情微微颤动，似乎感受到灯中残存的记忆。镜头为特写缓慢推近平视，角色保持闭眼指尖触碰心灯，灯力注入，表情沉浸且微微颤动，位置居中，无对话，氛围安静而神圣，微小光粒子在空气中飘浮，音效为细微的灯火共鸣声如风铃。图像提示为动漫极端特写，女孩双手触碰暗淡闪烁的火焰，微小光点从指尖流入火焰，闭眼平静表情，温暖粒子漂浮在空气中，魔法修复时刻，细致手部动画，柔和橙金色光线。",
+        "type": "image",
+        "imageFile": "whatdreamscost/ComfyUI_0004 (1).png",
+        "imageB64": "/api/view?filename=ComfyUI_0004%20(1).png&type=input&subfolder=whatdreamscost",
+        "isEndFrame": false
+      },
+      {
+        "id": "1784296134172ynds0",
+        "start": 240,
+        "length": 60,
+        "prompt": "心灯中闪过一段模糊记忆画面，一个孩子在田野上奔跑笑声回荡，苏念嘴角微微上扬，感受到灯火主人的童年快乐。镜头为特写固定平视，苏念微微睁眼嘴角上扬，露出温暖微笑，位置居中，对话为苏念轻声说别怕我来帮你，语气轻柔安慰，氛围温暖金色调充满画面，记忆画面叠加呈现，音效为远处孩童笑声回响和灯火变亮的声音。图像提示为动漫近景，女孩面部带着浅笑，火焰内部隐约浮现孩子在田野奔跑的记忆影像，温暖金色叠加，双重曝光效果，情感温柔的瞬间，琥珀色眼睛微微睁开，温暖光线。",
+        "type": "image",
+        "imageFile": "whatdreamscost/ComfyUI_0005 (1).png",
+        "imageB64": "/api/view?filename=ComfyUI_0005%20(1).png&type=input&subfolder=whatdreamscost",
+        "isEndFrame": false
+      },
+      {
+        "id": "1784296134215mskst",
+        "start": 300,
+        "length": 60,
+        "prompt": "心灯重新绽放光芒，从暗淡变为柔和暖黄色，苏念满意地将修复好的心灯放入保护器中，灯火稳定跳动。镜头为中景缓慢拉远平视，苏念将修复好的心灯轻轻放入玻璃保护器，表情欣慰满足，位置居中，无对话，氛围修复完成的满足与宁静，灯光更加温暖明亮，音效为灯火稳定燃烧的轻响和玻璃器皿的清脆声。图像提示为动漫中景，女孩小心将明亮暖黄色火焰放入玻璃保护壳，满意温柔的微笑，背景架子上有发光罐子，温暖舒适氛围，动漫治愈时刻。",
+        "type": "image",
+        "imageFile": "whatdreamscost/ComfyUI_0006 (1).png",
+        "imageB64": "/api/view?filename=ComfyUI_0006%20(1).png&type=input&subfolder=whatdreamscost",
+        "isEndFrame": false
+      }
+    ],
+    "motionSegments": [],
+    "audioSegments": []
+  }
+}
